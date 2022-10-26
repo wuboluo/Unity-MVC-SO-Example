@@ -14,17 +14,16 @@ namespace MVC
         public void AddNumber()
         {
             number += 1;
-
             UpdateInfo();
         }
 
-        // Notify the 'Controller' when the 'Model' data changes
+        // 当 model 数据发生变化时通知 controller
         private void UpdateInfo()
         {
-            // use c# Event.
+            // 1，使用 C#的Action
             UpdateEventChannel?.Invoke(this);
 
-            // use scriptableObject as event
+            // 2，使用 ScriptableObject
             // mainModelChannel.Raise(this);
         }
     }

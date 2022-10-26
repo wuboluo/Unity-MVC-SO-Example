@@ -13,7 +13,7 @@ namespace MVC
             mainView = GetComponent<MainView>();
             mainView.UpdateData(mainModel);
 
-            // An operation on the 'View' notify the 'Controller'
+            // 对 view 的操作通知 controller
             mainView.btnUpdate.onClick.AddListener(AddNumberOnClick);
 
             mainModel.UpdateEventChannel += UpdateInfo;
@@ -26,13 +26,13 @@ namespace MVC
             // mainModelChannel.OnEventRaised -= UpdateInfo;
         }
 
-        // 'Controller' update 'View'
+        // controller 更新 view
         private void UpdateInfo(MainModelSO data)
         {
             mainView.UpdateData(data);
         }
 
-        // 'Controller' update 'Model'
+        // controller 更新 model
         private void AddNumberOnClick()
         {
             mainModel.AddNumber();

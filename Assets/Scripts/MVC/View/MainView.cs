@@ -8,7 +8,7 @@ namespace MVC
         public Text txtNumber;
         public Button btnUpdate;
 
-        // Only responsible for changes in 'View' value
+        // 只负责 view 值的更改
         public void UpdateData(MainModelSO data)
         {
             txtNumber.text = data.number.ToString();
